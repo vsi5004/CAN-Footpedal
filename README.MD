@@ -36,7 +36,10 @@ CAN Footpedal is an Arduino-based project designed to capture the position of a 
 ## Configuration
 
 - The MCP2515 is configured to run at 16MHz with a baud rate of 1000kbps. Adjust these settings in the code if your hardware specifications differ.
-- The default mode is set to `MCP_LOOPBACK`. Change `CAN0.setMode(MCP_LOOPBACK);` to `CAN0.setMode(MCP_NORMAL);` for normal operation.
+- The default mode is set to `MCP_NORMAL`. Change `CAN0.setMode(MCP_NORMAL);` to `CAN0.setMode(MCP_LOOPBACK);` to test your transceiver in isolation.
+- Change `CAN_ID` to increase or decrease the priority of messages on the CAN bus (if there are other devices transmitting).
+- Change `CAN_SEND_DELAY_MS` to increase or decrease the delay between each can message being sent out.
+- Change `PEDAL_READ_DELAY_MS` to increase or decrease how quickly the pedal position is updated.
 
 ## Usage
 
